@@ -51,14 +51,14 @@ const Footer = () => {
                 <div className="w-2/12">
                     <h2 className='text-[24px] font-poppins font-semibold text-[#D4AF37]'>Contact Us </h2>
                     <div className="flex gap-3 py-3">
-                          <ul>
-                            <li>
+                          <ul className='text-[16px] flex flex-col gap-3'>
+                            <li className='flex items-center gap-2'>
                                  <FaLocationDot />
                                   Hot Oil Massage</li>
-                            <li>
+                            <li className='flex items-center gap-2'>
                                  <FaPhone />
                                   +1 (123) 456-7890</li>
-                            <li>
+                            <li className='flex items-center gap-2'>
                                  <FaEnvelope />
                                   info@moonlightspa.com</li>
                          </ul>
