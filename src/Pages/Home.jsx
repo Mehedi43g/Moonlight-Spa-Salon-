@@ -1,5 +1,6 @@
 
 import Banner from "../Commponents/Banner"
+import Footer from "../Commponents/Footer"
 import Navber from "../Commponents/Navber"
 import Poster from "../Commponents/Poster"
 import ServiceCard from "../Commponents/ServiceCard"
@@ -13,7 +14,7 @@ const Home = () => {
         <ServiceCard/>
         <Poster/>
         <SpecialPackages/>
-       
+       <Footer/>
     </div>
   )
 }

@@ -2,7 +2,7 @@ import Container from "./Container"
 
 const Navber = () => {
   return (
-    <nav className="bg-[#1A1410] shadow">
+    <nav className="bg-[#1a141086] shadow fixed w-full h-20 top-0 left-0 z-50">
       <Container>
 
     <div className="flex py-4 items-center justify-between font-poppins text-white font-">
