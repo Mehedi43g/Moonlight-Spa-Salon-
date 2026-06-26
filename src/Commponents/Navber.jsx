@@ -1,88 +1,212 @@
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import Container from "./Container";
+
 import {
-  FaHome,
+  FaBars,
+  FaTimes,
   FaSpa,
-  FaGift,
-  FaPhone,
 } from "react-icons/fa";
 
-const Navber = () => {
+const menuItems = [
+  {
+    name: "Home",
+    path: "/",
+  },
+  {
+    name: "Services",
+    path: "/services",
+  },
+  {
+    name: "Packages",
+    path: "/packages",
+  },
+  {
+    name: "About Us",
+    path: "/about",
+  },
+  {
+    name: "Gallery",
+    path: "/gallery",
+  },
+  {
+    name: "Blog",
+    path: "/blog",
+  },
+  {
+    name: "Contact",
+    path: "/contact",
+  },
+];
+
+const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <>
-      <nav className="bg-[#1a141086] shadow fixed w-full h-20 top-0 left-0 z-50 backdrop-blur-sm">
+      {/* Overlay */}
+
+      <div
+        onClick={() => setMenuOpen(false)}
+        className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition-all duration-300
+        ${
+          menuOpen
+            ? "opacity-100 visible"
+            : "opacity-0 invisible"
+        }`}
+      ></div>
+
+      {/* Navbar */}
+
+      <nav className="fixed top-0 left-0 w-full h-20 z-50 bg-[#1a141086] backdrop-blur-md shadow">
+
         <Container>
-          <div className="flex py-4 items-center justify-between font-poppins text-white">
+
+          <div className="h-20 flex items-center justify-between">
+
             {/* Logo */}
-            <div>
-              <h2 className="text-[20px] font-bold">
-                Moonlight Spa & Salon
+
+            <NavLink
+              to="/"
+              className="flex items-center gap-2"
+            >
+              <FaSpa
+                size={26}
+                className="text-[#D4AF37]"
+              />
+
+              <h2 className="text-white text-[22px] font-bold">
+                Moonlight Spa
               </h2>
-            </div>
+            </NavLink>
 
             {/* Desktop Menu */}
-            <div>
-              <div className="mx-auto justify-center items-center">
-                <ul className="hidden lg:flex items-center gap-6 font-poppins text-[16px]">
-                  <li className="cursor-pointer hover:text-[#D4AF37] transition-all">
-                    Home
-                  </li>
-                  <li className="cursor-pointer hover:text-[#D4AF37] transition-all">
-                    Services
-                  </li>
-                  <li className="cursor-pointer hover:text-[#D4AF37] transition-all">
-                    Packages
-                  </li>
-                  <li className="cursor-pointer hover:text-[#D4AF37] transition-all">
-                    About Us
-                  </li>
-                  <li className="cursor-pointer hover:text-[#D4AF37] transition-all">
-                    Gallery
-                  </li>
-                  <li className="cursor-pointer hover:text-[#D4AF37] transition-all">
-                    Blog
-                  </li>
-                  <li className="cursor-pointer hover:text-[#D4AF37] transition-all">
-                    Contact
-                  </li>
 
-                  <a href="#">
-                    <li className="bg-[#D4AF37] px-6 py-2 rounded-2xl cursor-pointer text-black font-semibold hover:scale-105 transition-all">
-                      Book Now
-                    </li>
-                  </a>
-                </ul>
-              </div>
-            </div>
+            <ul className="hidden lg:flex items-center gap-8 text-white font-medium">
+
+              {menuItems.map((item) => (
+                <li key={item.path}>
+
+                  <NavLink
+                    to={item.path}
+                    className={({ isActive }) =>
+                      `relative pb-2 transition-all duration-300
+                      ${
+                        isActive
+                          ? "text-[#D4AF37]"
+                          : "hover:text-[#D4AF37]"
+                      }`
+                    }
+                  >
+                    {({ isActive }) => (
+                      <>
+                        {item.name}
+
+                        <span
+                          className={`absolute left-0 -bottom-1 h-0.5 bg-[#D4AF37]
+                          transition-all duration-300
+                          ${
+                            isActive
+                              ? "w-full"
+                              : "w-0"
+                          }`}
+                        ></span>
+                      </>
+                    )}
+                  </NavLink>
+
+                </li>
+              ))}
+
+              <button className="bg-[#D4AF37] text-black px-6 py-2 rounded-full font-semibold hover:scale-105 duration-300">
+                Book Now
+              </button>
+
+            </ul>
+
+            {/* Mobile Hamburger */}
+
+            <button
+              onClick={() => setMenuOpen(true)}
+              className="lg:hidden text-white"
+            >
+              <FaBars size={26} />
+            </button>
+
           </div>
+
         </Container>
+
       </nav>
 
-      {/* Mobile Bottom Navigation */}
-      <div className="lg:hidden fixed bottom-0 left-0 w-full bg-[#1a1410] border-t border-[#D4AF37]/20 z-50 shadow-2xl">
-        <ul className="grid grid-cols-4 py-3 text-white text-xs">
-          <li className="flex flex-col items-center gap-1 text-[#D4AF37] cursor-pointer">
-            <FaHome size={18} />
-            <span>Home</span>
-          </li>
+      {/* Mobile Drawer */}
 
-          <li className="flex flex-col items-center gap-1 cursor-pointer">
-            <FaSpa size={18} />
-            <span>Services</span>
-          </li>
+      <div
+        className={`fixed top-0 right-0 h-screen
+        w-72.5
+        bg-[#1a1410]
+        z-50
+        transition-all
+        duration-500
+        ${
+          menuOpen
+            ? "translate-x-0"
+            : "translate-x-full"
+        }`}
+      >
 
-          <li className="flex flex-col items-center gap-1 cursor-pointer">
-            <FaGift size={18} />
-            <span>Packages</span>
-          </li>
+        {/* Drawer Header */}
 
-          <li className="flex flex-col items-center gap-1 cursor-pointer">
-            <FaPhone size={18} />
-            <span>Contact</span>
-          </li>
-        </ul>
+        <div className="flex items-center justify-between p-6 border-b border-[#D4AF37]/20">
+
+          <h2 className="text-white font-bold text-xl">
+            Moonlight Spa
+          </h2>
+
+          <button
+            onClick={() => setMenuOpen(false)}
+            className="text-white"
+          >
+            <FaTimes size={24} />
+          </button>
+
+        </div>
+                {/* Mobile Menu */}
+
+        <div className="flex flex-col p-6 gap-2">
+
+          {menuItems.map((item) => (
+            <NavLink
+              key={item.path}
+              to={item.path}
+              onClick={() => setMenuOpen(false)}
+              className={({ isActive }) =>
+                `relative px-4 py-3 rounded-xl transition-all duration-300 ${
+                  isActive
+                    ? "bg-[#D4AF37] text-black font-semibold"
+                    : "text-white hover:bg-[#2d241d] hover:text-[#D4AF37]"
+                }`
+              }
+            >
+              {item.name}
+            </NavLink>
+          ))}
+
+          {/* Book Button */}
+
+          <button
+            onClick={() => setMenuOpen(false)}
+            className="mt-6 w-full bg-[#D4AF37] text-black py-3 rounded-full font-semibold hover:scale-[1.02] transition-all duration-300"
+          >
+            Book Now
+          </button>
+
+        </div>
+
       </div>
+
     </>
   );
 };
 
-export default Navber;
+export default Navbar;
