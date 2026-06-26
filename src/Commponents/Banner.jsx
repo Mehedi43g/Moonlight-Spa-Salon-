@@ -1,18 +1,14 @@
-// Swiper
-import { Swiper, SwiperSlide } from "swiper/react";
+ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, EffectFade } from "swiper/modules";
-
-// Swiper CSS
+ 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
-
-// Images
+ 
 import banner1 from "../assets/banner3.jpg";
 import banner2 from "../assets/banner.jpg";
 import banner3 from "../assets/banner2.jpg";
-
-// Icons
+ 
 import { FaArrowRight } from "react-icons/fa";
 
 const slides = [
@@ -92,20 +88,17 @@ const Banner = () => {
     >
       {slides.map((slide) => (
         <SwiperSlide key={slide.id}>
-                    <div className="relative w-full h-[100vh] min-h-[700px] overflow-hidden">
-
-            {/* Background Image */}
+                    <div className="relative w-full h-screen min-h-175 overflow-hidden">
+ 
             <img
               src={slide.image}
               alt={slide.alt}
               className="w-full h-full object-cover"
               loading={slide.id === 1 ? "eager" : "lazy"}
             />
-
-            {/* Luxury Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/30"></div>
-
-            {/* Soft Dark Overlay */}
+ 
+            <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/55 to-black/30"></div>
+ 
             <div className="absolute inset-0 bg-black/20"></div>
 
             {/* Content */}
@@ -114,9 +107,7 @@ const Banner = () => {
 
               <div className="w-full max-w-7xl mx-auto px-5 lg:px-8">
 
-                <div className="max-w-3xl">
-
-                  {/* Premium Badge */}
+                <div className="max-w-3xl"> 
 
                   <div className="inline-flex items-center gap-3 rounded-full border border-[#D4AF37]/50 bg-white/10 backdrop-blur-md px-5 py-2 mb-6">
 
@@ -126,85 +117,42 @@ const Banner = () => {
                       {slide.badge}
                     </span>
 
-                  </div>
-
-                  {/* SEO H1 */}
+                  </div> 
 
                   <h1 className="text-white text-4xl md:text-6xl lg:text-7xl font-bold leading-tight drop-shadow-lg">
 
                     {slide.title}
 
-                  </h1>
-
-                  {/* Luxury Heading */}
+                  </h1> 
 
                   <h2 className="mt-5 text-[#D4AF37] text-2xl md:text-4xl lg:text-5xl font-semibold leading-snug max-w-3xl">
 
                     {slide.heading}
 
-                  </h2>
-
-                  {/* Description */}
+                  </h2> 
 
                   <p className="mt-7 text-gray-200 text-base md:text-lg leading-8 max-w-2xl">
 
                     {slide.description}
 
                   </p>
-
-                  {/* Buttons */}
+ 
 
                   <div className="flex flex-col sm:flex-row gap-5 mt-10">
 
-                    <button
-                      className="
-                      inline-flex
-                      items-center
-                      justify-center
-                      gap-3
-                      bg-[#D4AF37]
-                      text-black
-                      px-8
-                      py-4
-                      rounded-full
-                      font-semibold
-                      hover:bg-white
-                      duration-300
-                      shadow-xl
-                      cursor-pointer
-                      "
-                    >
+                    <button className=" inline-flex items-center justify-center  gap-3 bg-[#D4AF37] text-black px-8 py-4 rounded-full font-semibold  hover:bg-white  duration-300  shadow-xl cursor-pointer " >
                       {slide.primaryBtn}
 
                       <FaArrowRight />
                     </button>
 
-                    <button
-                      className="
-                      inline-flex
-                      items-center
-                      justify-center
-                      border
-                      border-white/40
-                      bg-white/10
-                      backdrop-blur-md
-                      text-white
-                      px-8
-                      py-4
-                      rounded-full
-                      font-semibold
-                      hover:bg-white
-                      hover:text-black
-                      duration-300
-                      cursor-pointer
-                      "
-                    >
+                    <button className="inline-flex items-center justify-center border border-white/40 
+                     bg-white/10 backdrop-blur-md text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-black duration-300 cursor-pointer">
                       {slide.secondaryBtn}
                     </button>
 
                   </div>
 
-                  {/* Premium Stats */}
 
                   <div className="grid grid-cols-3 gap-8 mt-16 max-w-xl">
 

@@ -17,9 +17,7 @@ import {
 const Footer = () => {
   return (
     <footer className="relative overflow-hidden bg-[#0F0C09] text-white">
-
-      {/* Background Glow */}
-
+      
       <div className="absolute -top-32 left-0 h-80 w-80 rounded-full bg-[#D4AF37]/10 blur-3xl"></div>
 
       <div className="absolute -bottom-32 right-0 h-80 w-80 rounded-full bg-[#D4AF37]/10 blur-3xl"></div>
@@ -27,9 +25,7 @@ const Footer = () => {
       <Container>
 
         <div className="relative z-10 grid gap-12 py-20 md:grid-cols-2 lg:grid-cols-5">
-
-          {/* Company */}
-
+          
           <div className="lg:col-span-2">
 
             <span className="uppercase tracking-[5px] text-sm text-[#D4AF37] font-semibold">
@@ -52,24 +48,20 @@ const Footer = () => {
 
             <div className="mt-8 flex gap-4">
 
-              <a
-                href="#"
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-[#D4AF37]/30 bg-white/5 transition-all duration-300 hover:bg-[#D4AF37] hover:text-black"
+              <a href="#" className="flex h-12 w-12 items-center justify-center rounded-full border border-[#D4AF37]/30
+               bg-white/5 transition-all duration-300 hover:bg-[#D4AF37] hover:text-black"
               >
                 <FaFacebookF />
               </a>
 
-              <a
-                href="#"
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-[#D4AF37]/30 bg-white/5 transition-all duration-300 hover:bg-[#D4AF37] hover:text-black"
+              <a href="#" className="flex h-12 w-12 items-center justify-center rounded-full border border-[#D4AF37]/30
+                 bg-white/5 transition-all duration-300 hover:bg-[#D4AF37] hover:text-black"
               >
                 <FaInstagram />
               </a>
 
-              <a
-                href="#"
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-[#D4AF37]/30 bg-white/5 transition-all duration-300 hover:bg-[#D4AF37] hover:text-black"
-              >
+              <a  href="#" className="flex h-12 w-12 items-center justify-center rounded-full border border-[#D4AF37]/30
+                 bg-white/5 transition-all duration-300 hover:bg-[#D4AF37] hover:text-black">
                 <FaWhatsapp />
               </a>
 

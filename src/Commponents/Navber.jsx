@@ -43,9 +43,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <>
-      {/* Overlay */}
-
+    <> 
       <div
         onClick={() => setMenuOpen(false)}
         className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition-all duration-300
@@ -54,17 +52,13 @@ const Navbar = () => {
             ? "opacity-100 visible"
             : "opacity-0 invisible"
         }`}
-      ></div>
-
-      {/* Navbar */}
-
+      ></div> 
       <nav className="fixed top-0 left-0 w-full h-20 z-50 bg-[#1a141086] backdrop-blur-md shadow">
 
         <Container>
 
           <div className="h-20 flex items-center justify-between">
-
-            {/* Logo */}
+ 
 
             <NavLink
               to="/"
@@ -79,8 +73,7 @@ const Navbar = () => {
                 Moonlight Spa
               </h2>
             </NavLink>
-
-            {/* Desktop Menu */}
+ 
 
             <ul className="hidden lg:flex items-center gap-8 text-white font-medium">
 
@@ -122,9 +115,7 @@ const Navbar = () => {
                 Book Now
               </button>
 
-            </ul>
-
-            {/* Mobile Hamburger */}
+            </ul> 
 
             <button
               onClick={() => setMenuOpen(true)}
@@ -137,9 +128,7 @@ const Navbar = () => {
 
         </Container>
 
-      </nav>
-
-      {/* Mobile Drawer */}
+      </nav> 
 
       <div
         className={`fixed top-0 right-0 h-screen
@@ -170,8 +159,7 @@ const Navbar = () => {
             <FaTimes size={24} />
           </button>
 
-        </div>
-                {/* Mobile Menu */}
+        </div> 
 
         <div className="flex flex-col p-6 gap-2">
 

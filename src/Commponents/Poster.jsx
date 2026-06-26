@@ -51,7 +51,7 @@ const Poster = () => {
 
           <div className="w-full lg:w-6/12">
             <img
-              className="w-full h-[250px] md:h-[350px] lg:h-[280px] xl:h-[350px] object-cover rounded-[10px]"
+              className="w-full h-62.5 md:h-87.5 lg:h-70 xl:h-87.5 object-cover rounded-[10px]"
               src={poster}
               alt=""
             />
