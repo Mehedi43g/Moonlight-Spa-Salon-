@@ -140,9 +140,7 @@ const ServiceCard = () => {
     <section className="bg-linear-to-b from-[#FCF8F2] to-white py-24">
 
       <Container>
-
-        {/* Header */}
-
+        
         <div className="max-w-3xl mx-auto text-center">
 
           <GiThreeLeaves
