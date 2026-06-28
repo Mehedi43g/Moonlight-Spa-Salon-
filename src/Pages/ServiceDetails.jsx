@@ -1,39 +1,57 @@
-import React from 'react'
-import DetailHero from '../Commponents/serviceDetail/DetailHero'
-import ServiceOverview from '../Commponents/serviceDetail/ServiceOverview'
-import Benefits from '../Commponents/serviceDetail/Benefits'
-import TreatmentStaps from '../Commponents/serviceDetail/TreatmentStaps'
-import PricingPlans from '../Commponents/serviceDetail/PricingPlans'
-import WhyChooseTreatment from '../Commponents/serviceDetail/WhyChooseTreatment'
-import Gallery from '../Commponents/serviceDetail/Gallery'
-import FAQ from '../Commponents/serviceDetail/FAQ'
-import RelatedServices from '../Commponents/serviceDetail/RelatedServices'
-import CTA from '../Commponents/serviceDetail/CTA'
+import { useParams } from "react-router-dom";
+import serviceDetails from "../data/serviceDetails";
+
+import DetailHero from "../Commponents/serviceDetail/DetailHero";
+import ServiceOverview from "../Commponents/serviceDetail/ServiceOverview";
+import Benefits from "../Commponents/serviceDetail/Benefits";
+import TreatmentStaps from "../Commponents/serviceDetail/TreatmentStaps";
+import PricingPlans from "../Commponents/serviceDetail/PricingPlans";
+import WhyChooseTreatment from "../Commponents/serviceDetail/WhyChooseTreatment";
+import Gallery from "../Commponents/serviceDetail/Gallery";
+import FAQ from "../Commponents/serviceDetail/FAQ";
+import RelatedServices from "../Commponents/serviceDetail/RelatedServices";
+import CTA from "../Commponents/serviceDetail/CTA";
 
 const ServiceDetails = () => {
+  const { slug } = useParams();
+
+  const service = serviceDetails.find(
+    (item) => item.slug === slug
+  );
+
+  if (!service) {
+    return (
+      <section className="min-h-screen flex items-center justify-center">
+        <h1 className="text-4xl font-bold">
+          Service Not Found
+        </h1>
+      </section>
+    );
+  }
+
   return (
-    <div>
-      <DetailHero />
+    <main>
+      <DetailHero service={service} />
 
-      <ServiceOverview />
+      <ServiceOverview service={service} />
 
-      <Benefits />
+      <Benefits service={service} />
 
-      <TreatmentStaps />
+      <TreatmentStaps service={service} />
 
-      <PricingPlans />
+      <PricingPlans service={service} />
 
-      <WhyChooseTreatment />
+      <WhyChooseTreatment service={service} />
 
-      <Gallery />
+      <Gallery service={service} />
 
-      <FAQ />
+      <FAQ service={service} />
 
-      <RelatedServices />
+      <RelatedServices service={service} />
 
-      <CTA />
-    </div>
-  )
-}
+      <CTA service={service} />
+    </main>
+  );
+};
 
-export default ServiceDetails
+export default ServiceDetails;
