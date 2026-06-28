@@ -15,15 +15,11 @@ const CTA = ({ service }) => {
 
         <div className="relative overflow-hidden rounded-[40px] bg-[#1A1410]">
 
-          {/* Background */}
+
 
           <div className="absolute inset-0 opacity-10">
 
-            <img
-              src={service.hero.image}
-              alt={service.hero.title}
-              className="w-full h-full object-cover"
-            />
+            <img src={service.hero.image} alt={service.hero.title} className="w-full h-full object-cover" />
 
           </div>
 
@@ -56,25 +52,19 @@ const CTA = ({ service }) => {
               </p>
 
               <div className="mt-12 flex flex-col items-center justify-center gap-5 sm:flex-row">
-                                <Link
-                  to={`/book-now?service=${service.slug}`}
+                <Link to={`/book-now?service=${service.slug}`}
                   className="inline-flex items-center justify-center gap-3 rounded-xl bg-[#D4AF37] px-8 py-4 font-semibold text-white transition-all duration-300 hover:bg-[#bf9c2c]"
                 >
                   <FaCalendarCheck />
                   Book Appointment
                 </Link>
 
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center gap-3 rounded-xl border border-white px-8 py-4 font-semibold text-white transition-all duration-300 hover:bg-white hover:text-[#1A1410]"
-                >
+                <Link to="/contact" className="inline-flex items-center justify-center gap-3 rounded-xl border border-white px-8 py-4 font-semibold text-white transition-all duration-300 hover:bg-white hover:text-[#1A1410]">
                   <FaPhoneAlt />
                   Contact Us
                 </Link>
 
               </div>
-
-              {/* Features */}
 
               <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
 
@@ -123,7 +113,7 @@ const CTA = ({ service }) => {
         </div>
 
       </Container>
-
+      
     </section>
   );
 };
