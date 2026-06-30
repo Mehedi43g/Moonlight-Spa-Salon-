@@ -1,15 +1,16 @@
- import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, EffectFade } from "swiper/modules";
- 
+import { useNavigate } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
+import { useBooking } from "../context/BookingContext";
+
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
- 
+
 import banner1 from "../assets/banner3.jpg";
 import banner2 from "../assets/banner.jpg";
 import banner3 from "../assets/banner2.jpg";
- 
-import { FaArrowRight } from "react-icons/fa";
 
 const slides = [
   {
@@ -71,129 +72,134 @@ const slides = [
 ];
 
 const Banner = () => {
+  const navigate = useNavigate();
+
+  const { openBookingModal } = useBooking();
+
   return (
     <Swiper
-      modules={[Pagination, Autoplay, EffectFade]}
-      effect="fade"
-      loop={true}
-      speed={1200}
-      autoplay={{
-        delay: 5000,
-        disableOnInteraction: false,
-      }}
-      pagination={{
-        clickable: true,
-      }}
-      className="w-full h-full"
-    >
-      {slides.map((slide) => (
-        <SwiperSlide key={slide.id}>
-                    <div className="relative w-full h-screen min-h-175 overflow-hidden">
- 
-            <img
-              src={slide.image}
-              alt={slide.alt}
-              className="w-full h-full object-cover"
-              loading={slide.id === 1 ? "eager" : "lazy"}
-            />
- 
-            <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/55 to-black/30"></div>
- 
-            <div className="absolute inset-0 bg-black/20"></div>
+  modules={[Pagination, Autoplay, EffectFade]}
+  effect="fade"
+  loop={true}
+  speed={1200}
+  autoplay={{
+    delay: 5000,
+    disableOnInteraction: false,
+  }}
+  pagination={{
+    clickable: true,
+  }}
+  className="w-full h-full"
+>
+  {slides.map((slide) => (
+    <SwiperSlide key={slide.id}>
+      <div className="relative w-full h-screen min-h-175 overflow-hidden">
 
-            {/* Content */}
+        {/* Background Image */}
+        <img
+          src={slide.image}
+          alt={slide.alt}
+          className="w-full h-full object-cover"
+          loading={slide.id === 1 ? "eager" : "lazy"}
+        />
 
-            <div className="absolute inset-0 flex items-center">
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/60 to-black/30"></div>
 
-              <div className="w-full max-w-7xl mx-auto px-5 lg:px-8">
+        <div className="absolute inset-0 bg-black/20"></div>
 
-                <div className="max-w-3xl"> 
+        {/* Hero Content */}
+        <div className="absolute inset-0 flex items-center">
 
-                  <div className="inline-flex items-center gap-3 rounded-full border border-[#D4AF37]/50 bg-white/10 backdrop-blur-md px-5 py-2 mb-6">
+          <div className="w-full max-w-7xl mx-auto px-5 lg:px-8">
 
-                    <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse"></span>
+            <div className="max-w-3xl">
 
-                    <span className="uppercase tracking-[4px] text-[11px] md:text-xs font-semibold text-[#D4AF37]">
-                      {slide.badge}
-                    </span>
+              {/* Badge */}
+              <div className="inline-flex items-center gap-3 rounded-full border border-[#D4AF37]/40 bg-white/10 backdrop-blur-md px-5 py-2 mb-6">
 
-                  </div> 
+                <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse"></span>
 
-                  <h1 className="text-white text-4xl md:text-6xl lg:text-7xl font-bold leading-tight drop-shadow-lg">
+                <span className="uppercase tracking-[4px] text-[11px] md:text-xs font-semibold text-[#D4AF37]">
+                  {slide.badge}
+                </span>
 
-                    {slide.title}
+              </div>
 
-                  </h1> 
+              {/* Title */}
+              <h1 className="text-white text-4xl md:text-6xl lg:text-7xl font-bold leading-tight drop-shadow-xl">
+                {slide.title}
+              </h1>
 
-                  <h2 className="mt-5 text-[#D4AF37] text-2xl md:text-4xl lg:text-5xl font-semibold leading-snug max-w-3xl">
+              {/* Heading */}
+              <h2 className="mt-5 text-[#D4AF37] text-2xl md:text-4xl lg:text-5xl font-semibold leading-snug">
+                {slide.heading}
+              </h2>
 
-                    {slide.heading}
+              {/* Description */}
+              <p className="mt-7 text-gray-200 text-base md:text-lg leading-8 max-w-2xl">
+                {slide.description}
+              </p>
 
-                  </h2> 
+              {/* Buttons */}
+              <div className="flex flex-col sm:flex-row gap-5 mt-10">
 
-                  <p className="mt-7 text-gray-200 text-base md:text-lg leading-8 max-w-2xl">
+                {/* Booking Button */}
+                <button
+                  onClick={openBookingModal}
+                  className="inline-flex items-center justify-center gap-3 bg-[#D4AF37] text-black px-8 py-4 rounded-full font-semibold shadow-xl transition-all duration-300 hover:bg-white hover:scale-105"
+                >
+                  {slide.primaryBtn}
 
-                    {slide.description}
+                  <FaArrowRight />
+                </button>
 
+                {/* Service Button */}
+                <button
+                  onClick={() => navigate("/services")}
+                  className="inline-flex items-center justify-center rounded-full border border-white/40 bg-white/10 backdrop-blur-md px-8 py-4 font-semibold text-white transition-all duration-300 hover:bg-white hover:text-black"
+                >
+                  {slide.secondaryBtn}
+                </button>
+
+              </div>
+
+              {/* Statistics */}
+              <div className="grid grid-cols-3 gap-8 mt-16 max-w-xl"></div>
+                            {/* Statistics */}
+              <div className="grid grid-cols-3 gap-8 mt-16 max-w-xl">
+
+                {/* Experience */}
+                <div>
+                  <h3 className="text-[#D4AF37] text-3xl font-bold">
+                    10+
+                  </h3>
+
+                  <p className="mt-2 text-sm text-gray-300">
+                    Years of Experience
                   </p>
- 
+                </div>
 
-                  <div className="flex flex-col sm:flex-row gap-5 mt-10">
+                {/* Happy Clients */}
+                <div>
+                  <h3 className="text-[#D4AF37] text-3xl font-bold">
+                    5K+
+                  </h3>
 
-                    <button className=" inline-flex items-center justify-center  gap-3 bg-[#D4AF37] text-black px-8 py-4 rounded-full font-semibold  hover:bg-white  duration-300  shadow-xl cursor-pointer " >
-                      {slide.primaryBtn}
+                  <p className="mt-2 text-sm text-gray-300">
+                    Happy Clients
+                  </p>
+                </div>
 
-                      <FaArrowRight />
-                    </button>
+                {/* Premium Care */}
+                <div>
+                  <h3 className="text-[#D4AF37] text-3xl font-bold">
+                    100%
+                  </h3>
 
-                    <button className="inline-flex items-center justify-center border border-white/40 
-                     bg-white/10 backdrop-blur-md text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-black duration-300 cursor-pointer">
-                      {slide.secondaryBtn}
-                    </button>
-
-                  </div>
-
-
-                  <div className="grid grid-cols-3 gap-8 mt-16 max-w-xl">
-
-                    <div>
-
-                      <h3 className="text-[#D4AF37] text-3xl font-bold">
-                        10+
-                      </h3>
-
-                      <p className="text-gray-300 mt-2 text-sm">
-                        Years of Experience
-                      </p>
-
-                    </div>
-
-                    <div>
-
-                      <h3 className="text-[#D4AF37] text-3xl font-bold">
-                        5K+
-                      </h3>
-
-                      <p className="text-gray-300 mt-2 text-sm">
-                        Happy Clients
-                      </p>
-
-                    </div>
-
-                    <div>
-
-                      <h3 className="text-[#D4AF37] text-3xl font-bold">
-                        100%
-                      </h3>
-
-                      <p className="text-gray-300 mt-2 text-sm">
-                        Premium Care
-                      </p>
-
-                    </div>
-
-                  </div>
-
+                  <p className="mt-2 text-sm text-gray-300">
+                    Premium Care
+                  </p>
                 </div>
 
               </div>
@@ -202,10 +208,15 @@ const Banner = () => {
 
           </div>
 
-        </SwiperSlide>
-      ))}
-          </Swiper>
+        </div>
+
+      </div>
+
+    </SwiperSlide>
+  ))}
+</Swiper>
   );
 };
 
 export default Banner;
+              

@@ -6,12 +6,12 @@ import SpecialPackages from "../Commponents/SpecialPackages"
 const Home = () => {
   return (
     <div>
-
+      
         <Banner/>
         <ServiceCard/>
         <Poster/>
         <SpecialPackages/>
-        
+
     </div>
   )
 }

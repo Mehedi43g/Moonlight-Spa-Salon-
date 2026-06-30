@@ -1,8 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
-
 import Navber from "./Commponents/Navber";
-import Footer from "./Commponents/Footer"
+import Footer from "./Commponents/Footer";
 
 import Home from "./Pages/Home";
 import Services from "./Pages/Services";
@@ -14,14 +13,13 @@ import Blog from "./Pages/Blog";
 import Contact from "./Pages/Contact";
 import BookNow from "./Pages/BookNow";
 
-function App() {
+import BookingModal from "./Commponents/BookingModal";
 
+function App() {
   return (
     <>
-      
       <Navber />
 
-      
       <main className="pt-20 min-h-screen">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -30,7 +28,7 @@ function App() {
           <Route path="/services/:slug/:duration" element={<ServiceDetails />} />
 
           <Route path="/packages" element={<Packages />} />
-          <Route path="/about" element={<AboutUs/>} />
+          <Route path="/about" element={<AboutUs />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
@@ -38,8 +36,9 @@ function App() {
         </Routes>
       </main>
 
-     
       <Footer />
+
+      <BookingModal />
     </>
   );
 }
