@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { X, MessageCircle, Globe } from "lucide-react";
 import { useBooking } from "../context/BookingContext";
 
-const WHATSAPP_NUMBER = "8801XXXXXXXXX";
+const WHATSAPP_LINK = "https://wa.me/8801540097587";
 
 const WHATSAPP_MESSAGE =
   "Hello,%20I%20would%20like%20to%20book%20an%20appointment.%0A%0AName:%20%0APreferred%20Service:%20%0APreferred%20Date:%20%0APreferred%20Time:%20";
@@ -58,7 +58,7 @@ export default function BookingModal() {
         </div>
 
         <a
-          href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`}
+          href={WHATSAPP_LINK}
           target="_blank"
           rel="noopener noreferrer"
           className="mb-4 flex w-full items-center justify-center gap-3 rounded-xl bg-green-600 py-4 text-lg font-semibold text-white transition hover:bg-green-700"
