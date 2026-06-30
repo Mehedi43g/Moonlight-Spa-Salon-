@@ -1,6 +1,8 @@
 import Container from "./Container";
 import { Link } from "react-router-dom";
 
+import { useBooking } from "../context/BookingContext";
+
 import sp1 from "../assets/sp1.jpg";
 import sp2 from "../assets/sp2.jpg";
 import sp3 from "../assets/sp3.jpg";
@@ -76,8 +78,9 @@ const packages = [
 ];
 
 const SpecialPackages = () => {
+    const { openBookingModal } = useBooking();
   return (
-    <section className="py-24 bg-gradient-to-b from-[#FFFDF9] via-[#F9F3EA] to-[#FFFDF9]">
+    <section className="py-24 bg-linear-to-b from-[#FFFDF9] via-[#F9F3EA] to-[#FFFDF9]">
 
       <Container>
 
@@ -144,7 +147,7 @@ const SpecialPackages = () => {
 
       {/* Overlay */}
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+      <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent"></div>
 
       {/* Badge */}
 
@@ -255,7 +258,7 @@ const SpecialPackages = () => {
         </Link>
 
         <Link
-          to="/book-now"
+          onClick={openBookingModal}
           className="
           flex
           items-center

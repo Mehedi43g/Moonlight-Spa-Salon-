@@ -25,6 +25,7 @@ const Services = () => {
       <CTA />
     </>
   );
+  
 };
 
 export default Services;

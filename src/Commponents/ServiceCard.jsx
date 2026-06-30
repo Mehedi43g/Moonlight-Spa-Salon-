@@ -1,6 +1,7 @@
 import Container from "./Container";
 import { Link } from "react-router-dom";
 
+import { useBooking } from "../context/BookingContext";
 // Images
 import card1 from "../assets/card1.jpg";
 import card2 from "../assets/card2.jpg";
@@ -136,6 +137,7 @@ const services = [
 ];
 
 const ServiceCard = () => {
+   const { openBookingModal } = useBooking();
   return (
     <section className="bg-linear-to-b from-[#FCF8F2] to-white py-24">
 
@@ -242,8 +244,7 @@ const ServiceCard = () => {
 
         <div className="mt-8 flex flex-col gap-3">
 
-          <Link
-            to="/book-now"  className=" flex items-center justify-center  gap-2  rounded-xl  bg-[#D4AF37]  py-4
+          <Link   onClick={openBookingModal} className=" flex items-center justify-center  gap-2  rounded-xl  bg-[#D4AF37]  py-4
             font-semibold  text-black  duration-300  hover:bg-[#1A1410]  hover:text-white  " >  Book Appointment  <MdArrowOutward className="text-xl" />
           </Link>
 
@@ -292,7 +293,7 @@ const ServiceCard = () => {
               <div
                 className=" mt-12 flex flex-col  sm:flex-row justify-center gap-5 " >
 
-                <Link to="/book-now" className=" rounded-full bg-[#D4AF37] px-10  py-4 text-center 
+                <Link  onClick={openBookingModal}  className=" rounded-full bg-[#D4AF37] px-10  py-4 text-center 
                 font-bold  text-black duration-300  hover:scale-105  hover:bg-white " >
                   Book Appointment
                 </Link>

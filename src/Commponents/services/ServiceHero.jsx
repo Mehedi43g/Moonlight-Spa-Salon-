@@ -3,7 +3,10 @@ import { FaAward, FaChevronRight, FaHandsHelping } from "react-icons/fa";
 import { MdSpa } from "react-icons/md";
 import { GiLotus } from "react-icons/gi";
 
+import { useBooking } from "../../context/BookingContext";
+
 const ServiceHero = () => {
+  const { openBookingModal } = useBooking();
   return (
     <section className="relative w-full h-[90vh] min-h-162.5 overflow-hidden">
 
@@ -79,7 +82,7 @@ const ServiceHero = () => {
 
           <div className="mt-12 flex flex-col sm:flex-row gap-5">
 
-            <Link to="/book-now" className="inline-flex items-center  justify-center rounded-full bg-[#D4AF37] px-10
+            <Link onClick={openBookingModal} className="inline-flex items-center  justify-center rounded-full bg-[#D4AF37] px-10
                   py-4 text-lg font-semibold  text-black transition-all duration-300 hover:scale-105  hover:bg-white shadow-2xl">
               Book Appointment
             </Link>

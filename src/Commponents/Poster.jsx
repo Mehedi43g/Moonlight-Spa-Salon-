@@ -2,6 +2,7 @@ import React from 'react'
 import Container from './Container'
 import { FaCheckCircle } from 'react-icons/fa'
 import poster from '../assets/poster1.jpg'
+import { Link } from 'react-router-dom'
 
 const Poster = () => {
   return (
@@ -43,9 +44,9 @@ const Poster = () => {
             </ul>
 
             <div className="pt-5 flex justify-center lg:justify-start">
-              <p className="text-[#F8F3ED] font-poppins text-[15px] md:text-[16px] bg-[#D4AF37] rounded-[10px] py-3 px-6 cursor-pointer text-center w-full sm:w-[70%] lg:w-[60%]">
+              <Link  to="/about" className="text-[#F8F3ED] font-poppins text-[15px] md:text-[16px] bg-[#D4AF37] rounded-[10px] py-3 px-6 cursor-pointer text-center w-full sm:w-[70%] lg:w-[60%]">
                 Learn More About Us
-              </p>
+              </Link>
             </div>
           </div>
 
