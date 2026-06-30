@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import Container from "../Container";
-
+import { useBooking } from "../../context/BookingContext";
 import { FaPhoneAlt, FaCalendarCheck } from "react-icons/fa";
 
 const CTA = ({ service }) => {
   if (!service) return null;
-
+const { openBookingModal } = useBooking();
   return (
     <section className="py-24 bg-[#FCF8F2]">
 
@@ -52,12 +52,12 @@ const CTA = ({ service }) => {
               </p>
 
               <div className="mt-12 flex flex-col items-center justify-center gap-5 sm:flex-row">
-                <Link to={`/book-now?service=${service.slug}`}
+                <button  onClick={() => openBookingModal()}
                   className="inline-flex items-center justify-center gap-3 rounded-xl bg-[#D4AF37] px-8 py-4 font-semibold text-white transition-all duration-300 hover:bg-[#bf9c2c]"
                 >
                   <FaCalendarCheck />
-                  Book Appointment
-                </Link>
+                  Book Appointment 
+                </button>
 
                 <Link to="/contact" className="inline-flex items-center justify-center gap-3 rounded-xl border border-white px-8 py-4 font-semibold text-white transition-all duration-300 hover:bg-white hover:text-[#1A1410]">
                   <FaPhoneAlt />

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import Container from "../Container";
-
+import { useBooking } from "../../context/BookingContext";
 import {
   FaCheckCircle,
   FaCrown,
@@ -11,6 +11,7 @@ import {
 
 const PricingPlans = ({ service }) => {
   if (!service) return null;
+  const { openBookingModal } = useBooking();
 
   const durations = service.duration || [];
 
@@ -135,8 +136,7 @@ const PricingPlans = ({ service }) => {
 
                   </div>
 
-                  <div className="mt-8 space-y-4">
-                                      {features.map((item, index) => (
+                  <div className="mt-8 space-y-4">  {features.map((item, index) => (
 
                     <div
                       key={index}
@@ -159,8 +159,7 @@ const PricingPlans = ({ service }) => {
 
                 <div className="mt-10 space-y-4">
 
-                  <Link
-                    to={`/book-now?service=${service.slug}&duration=${minute}`}
+                  <button onClick={() => openBookingModal()} 
                     className={`w-full flex items-center justify-center rounded-xl py-4 font-semibold transition-all duration-300
 
                     ${
@@ -172,7 +171,7 @@ const PricingPlans = ({ service }) => {
                     }`}
                   >
                     Book Now
-                  </Link>
+                  </button>
 
                   <Link
                     to="/contact"

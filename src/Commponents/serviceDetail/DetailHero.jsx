@@ -23,7 +23,7 @@ const DetailHero = ({ service }) => {
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/70"></div>
 
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20"></div>
+        <div className="absolute inset-0 bg-linear-to-r from-black/85 via-black/55 to-black/20"></div>
 
         {/* Content */}
         <div className="relative z-20 w-full max-w-7xl mx-auto px-6 lg:px-8">
