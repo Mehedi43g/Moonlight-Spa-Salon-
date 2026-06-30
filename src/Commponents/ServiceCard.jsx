@@ -122,15 +122,15 @@ const services = [
     durations: [
       {
         title: "60 Min",
-        link: "/services/facial/60",
+        link: "/services/facial-therapy/60",
       },
       {
         title: "90 Min",
-        link: "/services/facial/90",
+        link: "/services/facial-therapy/90",
       },
       {
         title: "120 Min",
-        link: "/services/facial/120",
+        link: "/services/facial-therapy/120",
       },
     ],
   },

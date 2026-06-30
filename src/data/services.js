@@ -53,6 +53,7 @@ const services = [
     seoDescription:
       "Professional Hot Oil Massage with luxurious spa therapy for complete relaxation and stress relief.",
   },
+  
 
   {
     id: 2,
@@ -225,6 +226,8 @@ const services = [
     seoDescription:
       "Affordable professional Dry Massage designed to improve flexibility and reduce muscle tension.",
   },
+  
+  
 ];
 
 export default services;
