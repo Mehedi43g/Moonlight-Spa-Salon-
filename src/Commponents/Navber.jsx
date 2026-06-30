@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Container from "./Container";
-
+import { useBooking } from "../context/BookingContext";
 import {
   FaBars,
   FaTimes,
@@ -41,6 +41,7 @@ const menuItems = [
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { openBookingModal } = useBooking();
 
   return (
     <> 
@@ -111,9 +112,9 @@ const Navbar = () => {
                 </li>
               ))}
 
-              <button className="bg-[#D4AF37] text-black px-6 py-2 rounded-full font-semibold hover:scale-105 duration-300">
+              <button onClick={openBookingModal} className="bg-[#D4AF37] text-black px-6 py-2 rounded-full font-semibold hover:scale-105 duration-300 cursor-pointer">
                 Book Now
-              </button>
+                </button>
 
             </ul> 
 

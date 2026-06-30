@@ -15,6 +15,7 @@ import {
 } from "react-icons/fa6";
 
 const Footer = () => {
+  const WHATSAPP_LINK = "https://wa.me/8801540097587";
   return (
     <footer className="relative overflow-hidden bg-[#0F0C09] text-white">
       
@@ -60,10 +61,16 @@ const Footer = () => {
                 <FaInstagram />
               </a>
 
-              <a  href="#" className="flex h-12 w-12 items-center justify-center rounded-full border border-[#D4AF37]/30
-                 bg-white/5 transition-all duration-300 hover:bg-[#D4AF37] hover:text-black">
-                <FaWhatsapp />
-              </a>
+              <a
+  href={WHATSAPP_LINK}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Chat on WhatsApp"
+  className="flex h-12 w-12 items-center justify-center rounded-full border border-[#D4AF37]/30
+  bg-white/5 transition-all duration-300 hover:bg-[#25D366] hover:text-white hover:scale-110"
+>
+  <FaWhatsapp size={20} />
+</a>
 
             </div>
 
