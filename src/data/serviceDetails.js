@@ -768,11 +768,11 @@ const serviceDetails = [
 {
   id: 8,
 
-  slug: "foot-reflexology",
+  slug: "foot-massage",
 
   hero: {
-    title: "Foot Reflexology",
-    subtitle: "Natural Healing Foot Therapy",
+    title: "Foot Massage",
+    subtitle: "Natural Healing Foot Massage",
     badge: "Wellness Favorite",
     image:
       "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1600&q=80",
@@ -780,10 +780,10 @@ const serviceDetails = [
 
   overview: {
     shortDescription:
-      "A relaxing foot therapy that stimulates pressure points to improve overall health and wellness.",
+      "A relaxing foot massage that stimulates pressure points to improve overall health and wellness.",
 
     fullDescription:
-      "Foot Reflexology is based on the principle that specific pressure points on the feet correspond to different organs and systems of the body. By applying precise pressure techniques, this treatment promotes natural healing, reduces stress, improves circulation and restores overall physical and mental balance.",
+      "Our Foot Massage is based on the principle that specific pressure points on the feet correspond to different organs and systems of the body. By applying precise pressure techniques, this treatment promotes natural healing, reduces stress, improves circulation and restores overall physical and mental balance.",
   },
 
   pricing: {
@@ -794,7 +794,7 @@ const serviceDetails = [
 
   duration: [60, 90, 120],
 
-  therapist: "Certified Reflexology Specialist",
+  therapist: "Certified Foot Massage Specialist",
 
   room: "Private Relaxation Room",
 
@@ -811,7 +811,7 @@ const serviceDetails = [
     "Welcome Drink",
     "Foot Cleansing",
     "Private Treatment Room",
-    "Professional Reflexology Session",
+    "Professional Foot Massage Session",
     "Fresh Towels",
     "Relaxation Tea",
   ],
@@ -880,11 +880,11 @@ const serviceDetails = [
 {
   id: 9,
 
-  slug: "aromatherapy",
+  slug: "aroma-oil-massage",
 
   hero: {
-    title: "Aromatherapy",
-    subtitle: "Luxury Essential Oil Therapy",
+    title: "Aroma Oil Massage",
+    subtitle: "Luxury Essential Aroma Oil Massage",
     badge: "Relaxation Expert",
     image:
       "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1600&q=80",
@@ -895,7 +895,7 @@ const serviceDetails = [
       "A calming massage using premium essential oils to relax your body, reduce stress and restore emotional balance.",
 
     fullDescription:
-      "Aromatherapy Massage combines gentle massage techniques with carefully selected essential oils to create a deeply relaxing and therapeutic experience. The natural aromas help calm the nervous system, relieve anxiety, improve mood and promote better sleep while soothing tired muscles. It is the perfect treatment for guests seeking complete physical and emotional wellness.",
+      "Our Aroma Oil Massage combines gentle massage techniques with carefully selected essential oils to create a deeply relaxing and therapeutic experience. The natural aromas help calm the nervous system, relieve anxiety, improve mood and promote better sleep while soothing tired muscles. It is the perfect treatment for guests seeking complete physical and emotional wellness.",
   },
 
   pricing: {
@@ -906,9 +906,9 @@ const serviceDetails = [
 
   duration: [60, 90, 120],
 
-  therapist: "Certified Aromatherapy Specialist",
+  therapist: "Certified Aroma Oil Massage Specialist",
 
-  room: "Luxury Aromatherapy Suite",
+  room: "Luxury Aroma Oil Suite",
 
   benefits: [
     "Reduces Stress & Anxiety",
@@ -1097,7 +1097,7 @@ const serviceDetails = [
 
   relatedServices: [
     "hot-oil-massage",
-    "aromatherapy",
+    "aroma-oil-massage",
     "four-hand-massage",
   ],
 },
@@ -1209,29 +1209,29 @@ const serviceDetails = [
 
   relatedServices: [
     "hot-oil-massage",
-    "aromatherapy",
+    "aroma-oil-massage",
     "nuru-massage",
   ],
 },
 {
   id: 12,
 
-  slug: "facial-therapy",
+  slug: "full-body-massage",
 
   hero: {
-    title: "Facial Therapy",
-    subtitle: "Luxury Facial Rejuvenation",
-    badge: "Beauty Essential",
+    title: "Full Body Massage",
+    subtitle: "Complete Wellness & Relaxation",
+    badge: "Royal Care",
     image:
-      "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1600&q=80",
   },
 
   overview: {
     shortDescription:
-      "Restore your skin's natural glow with our premium Facial Therapy treatment.",
+      "A complete head-to-toe massage therapy designed to relieve tension and balance natural energy.",
 
     fullDescription:
-      "Our Facial Therapy is a luxurious skincare treatment designed to deeply cleanse, exfoliate, hydrate and nourish your skin. Using premium skincare products and professional facial massage techniques, this treatment improves skin texture, restores natural radiance, reduces signs of fatigue and leaves your skin feeling refreshed, healthy and rejuvenated.",
+      "Our Full Body Massage is a deeply therapeutic massage targeting all major muscle groups. Warmed, high-grade oils are combined with custom rhythmic strokes to alleviate skeletal stiffness, expand joint ranges, stimulate lymphatic flow, and soothe mental stress in a luxurious private suite environment.",
   },
 
   pricing: {
@@ -1242,55 +1242,55 @@ const serviceDetails = [
 
   duration: [60, 90, 120],
 
-  therapist: "Certified Facial Therapy Specialist",
+  therapist: "Senior Professional Female Therapist",
 
-  room: "Luxury Facial Treatment Room",
+  room: "Luxury Private Therapy Room",
 
   benefits: [
-    "Deep Skin Cleansing",
-    "Improves Skin Hydration",
-    "Enhances Natural Glow",
-    "Reduces Fine Lines",
-    "Refreshes Tired Skin",
-    "Promotes Healthy Complexion",
+    "Reduces General Muscle Fatigue",
+    "Relieves Joint Stiffness",
+    "Improves Lymphatic Flow",
+    "Lowers Core Stress Levels",
+    "Enhances Post-Work Recovery",
+    "Improves Night Sleep Quality",
   ],
 
   includes: [
-    "Skin Consultation",
-    "Premium Facial Products",
-    "Deep Cleansing",
-    "Facial Massage",
-    "Hydrating Face Mask",
-    "Relaxation Tea",
+    "Welcome Herbal Infusion",
+    "Warm Organic Oils",
+    "Full Body Massage Session",
+    "Warm Bathrobes & Towels",
+    "Private Luxury Shower",
+    "Post-Therapy Refreshing Tea",
   ],
 
   idealFor: [
-    "Dry Skin",
-    "Oily Skin",
-    "Sensitive Skin",
-    "Anti-Aging Care",
+    "Skeletal Stiffness Relief",
+    "Stress Recovery",
+    "Active Athletes",
+    "All Luxury Spa Lovers",
   ],
 
   treatmentSteps: [
     {
-      title: "Skin Consultation",
+      title: "Body Consultation",
       description:
-        "Our skincare specialist analyzes your skin type and recommends the most suitable treatment.",
+        "Our massage therapist discusses your preferred pressure and spots of skeletal fatigue.",
     },
     {
-      title: "Deep Cleansing",
+      title: "Preparation",
       description:
-        "The face is cleansed thoroughly to remove dirt, excess oil and impurities.",
+        "Prepare in your private cabin as organic herbal massage oils are warmed.",
     },
     {
-      title: "Facial Therapy",
+      title: "Body Massage",
       description:
-        "Professional massage, exfoliation and hydration techniques restore your skin's natural beauty.",
+        "A customized full-body massage performed from head to toe using premium strokes.",
     },
     {
-      title: "Final Protection",
+      title: "Post-Relaxation",
       description:
-        "A nourishing moisturizer and sunscreen are applied to protect and maintain healthy skin.",
+        "Conclude with a warm bath/shower and hot refreshment herbal tea.",
     },
   ],
 
@@ -1303,26 +1303,26 @@ const serviceDetails = [
 
   faq: [
     {
-      question: "Is Facial Therapy suitable for all skin types?",
+      question: "Is Full Body Massage suitable for everyone?",
       answer:
-        "Yes. Our therapists customize every facial treatment according to your skin type and condition.",
+        "Yes. It is custom-tailored to different age brackets and physical tolerances.",
     },
     {
-      question: "How often should I book a facial treatment?",
+      question: "What should I wear during the session?",
       answer:
-        "For the best results, we recommend one treatment every 3 to 4 weeks.",
+        "We provide disposable sheets, sanitized undergarments, and clean robes for all clients.",
     },
     {
-      question: "Is there any recovery time after the treatment?",
+      question: "How long is the session recommended to be?",
       answer:
-        "No. You can return to your normal daily routine immediately after your session.",
+        "The 90-minute and 120-minute sessions provide the best focus for deep body rejuvenation.",
     },
   ],
 
   relatedServices: [
-    "aromatherapy",
+    "aroma-oil-massage",
     "hot-oil-massage",
-    "foot-reflexology",
+    "foot-massage",
   ],
 },
 

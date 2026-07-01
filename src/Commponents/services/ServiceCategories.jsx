@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Container from "../Container";
+import serviceDetails from "../../data/serviceDetails";
 
 import {
   MdArrowOutward,
@@ -15,81 +16,66 @@ import {
   FaFire,
 } from "react-icons/fa";
 
-const categories = [
-  {
-    id: 1,
-    title: "Hot Oil Massage",
-    description:
-      "Warm therapeutic oils combined with expert techniques to relieve muscle tension, improve circulation, and create complete body relaxation.",
-    treatments: "12 Treatments",
-    icon: <FaFire />,
-    image:
-      "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1200&auto=format&fit=crop",
-    link: "/services/hot-oil-massage",
-  },
+const getCategory = (slug) => {
+  if (slug === "foot-massage" || slug === "aroma-oil-massage") return "Wellness";
+  return "Massage";
+};
 
-  {
-    id: 2,
-    title: "Aromatherapy",
-    description:
-      "Luxury essential oil massage designed to calm the mind, reduce anxiety, and restore emotional balance.",
-    treatments: "9 Treatments",
-    icon: <FaLeaf />,
-    image:
-      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop",
-    link: "/services/aromatherapy",
-  },
+const getIcon = (slug) => {
+  switch (slug) {
+    case "hot-oil-massage":
+      return <FaFire />;
+    case "aroma-oil-massage":
+      return <FaLeaf />;
+    case "deep-tissue":
+      return <FaHands />;
+    case "thai-massage":
+      return <MdOutlineSelfImprovement />;
+    case "foot-massage":
+      return <FaWalking />;
+    case "full-body-massage":
+      return <MdOutlineSpa />;
+    default:
+      return <MdOutlineSpa />;
+  }
+};
 
-  {
-    id: 3,
-    title: "Deep Tissue Massage",
-    description:
-      "Target deep muscle layers to relieve chronic pain, improve mobility, and accelerate recovery.",
-    treatments: "15 Treatments",
-    icon: <FaHands />,
-    image:
-      "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1200&auto=format&fit=crop",
-    link: "/services/deep-tissue",
-  },
-
-  {
-    id: 4,
-    title: "Thai Massage",
-    description:
-      "Traditional Thai stretching techniques that improve flexibility, posture, and overall body wellness.",
-    treatments: "10 Treatments",
-    icon: <MdOutlineSelfImprovement />,
-    image:
-      "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?q=80&w=1200&auto=format&fit=crop",
-    link: "/services/thai-massage",
-  },
-
-  {
-    id: 5,
-    title: "Foot Reflexology",
-    description:
-      "Pressure-point therapy that stimulates natural healing and relieves stress throughout the body.",
-    treatments: "8 Treatments",
-    icon: <FaWalking />,
-    image:
-      "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1200&auto=format&fit=crop",
-    link: "/services/foot-reflexology",
-  },
-
-  {
-    id: 6,
-    title: "Facial Therapy",
-    description:
-      "Luxury facial treatments that deeply cleanse, hydrate, brighten, and rejuvenate your skin naturally.",
-    treatments: "11 Treatments",
-    icon: <MdOutlineFaceRetouchingNatural />,
-    image:
-      "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=1200&auto=format&fit=crop",
-    link: "/services/facial-therapy",
-  },
+const featuredSlugs = [
+  "hot-oil-massage",
+  "aroma-oil-massage",
+  "deep-tissue",
+  "thai-massage",
+  "foot-massage",
+  "full-body-massage"
 ];
 
+const categories = featuredSlugs.map((slug, idx) => {
+  const service = serviceDetails.find(s => s.slug === slug);
+  if (!service) return null;
+  const categoryName = getCategory(slug);
+  const count = serviceDetails.filter(s => getCategory(s.slug) === categoryName).length;
+  return {
+    id: idx + 1,
+    title: service.hero.title,
+    description: service.overview.shortDescription,
+    treatments: `${count} Treatment${count > 1 ? "s" : ""}`,
+    icon: getIcon(slug),
+    image: service.hero.image,
+    link: `/services/${slug}`
+  };
+}).filter(Boolean);
+
 const ServiceCategories = () => {
+  const handleViewAllServices = (e) => {
+    if (window.location.pathname === "/services") {
+      e.preventDefault();
+      const gridElement = document.getElementById("treatment-grid");
+      if (gridElement) {
+        gridElement.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <section className="py-24 bg-linear-to-b from-[#FFFDF9] via-[#FAF6EF] to-[#F4EEE5] overflow-hidden">
       <Container>
@@ -230,13 +216,18 @@ const ServiceCategories = () => {
 
               <div className="mt-10 flex flex-col gap-5 sm:flex-row">
 
-                <Link to="/services" className="rounded-full
-                  bg-[#D4AF37] px-8 py-4 font-semibold  text-black transition-all  duration-300  hover:scale-105  hover:bg-white " >
+                <Link
+                  to="/services"
+                  onClick={handleViewAllServices}
+                  className="rounded-full bg-[#D4AF37] px-8 py-4 font-semibold text-black transition-all duration-300 hover:scale-105 hover:bg-white"
+                >
                   View All Services
                 </Link>
 
-                <Link  to="/book-now" className="  rounded-full  border  border-[#D4AF37]  px-8 py-4
-                  font-semibold text-[#D4AF37] transition-all duration-300 hover:bg-[#D4AF37] hover:text-black hover:scale-105">
+                <Link
+                  to="/booking"
+                  className="rounded-full border border-[#D4AF37] px-8 py-4 font-semibold text-[#D4AF37] transition-all duration-300 hover:bg-[#D4AF37] hover:text-black hover:scale-105"
+                >
                   Book Consultation
                 </Link>
 

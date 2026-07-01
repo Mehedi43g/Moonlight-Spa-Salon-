@@ -2,13 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import Container from "../Container";
-import services from "../../data/services";
+import serviceDetails from "../../data/serviceDetails";
+
+const getCategory = (slug) => {
+  if (slug === "foot-massage" || slug === "aroma-oil-massage") return "Wellness";
+  return "Massage";
+};
 
 const RelatedServices = ({ service }) => {
 
   if (!service) return null;
 
-  const related = services.filter((item) =>
+  const related = serviceDetails.filter((item) =>
     service.relatedServices?.includes(item.slug)
   );
   return (
@@ -45,74 +50,76 @@ const RelatedServices = ({ service }) => {
 
         <div className="grid gap-8 mt-16 md:grid-cols-2 lg:grid-cols-3">
           
-          {related.map((item) => (
+          {related.map((item) => {
+            const lowestPrice = Math.min(...Object.values(item.pricing));
+            return (
 
-            <div
-              key={item.id}
-              className="overflow-hidden rounded-3xl bg-white shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
-            >
+              <div
+                key={item.id}
+                className="overflow-hidden rounded-3xl bg-white shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+              >
 
-              <div className="overflow-hidden">
+                <div className="overflow-hidden">
 
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="h-64 w-full object-cover transition duration-700 hover:scale-110"
-                />
+                  <img
+                    src={item.hero.image}
+                    alt={item.hero.title}
+                    className="h-64 w-full object-cover transition duration-700 hover:scale-110"
+                  />
 
-              </div>
+                </div>
 
-              <div className="p-7">
+                <div className="p-7">
 
-                <span className="inline-block rounded-full bg-[#D4AF37]/10 px-4 py-2 text-sm font-semibold text-[#D4AF37]">
+                  <span className="inline-block rounded-full bg-[#D4AF37]/10 px-4 py-2 text-sm font-semibold text-[#D4AF37]">
 
-                  {item.category}
+                    {getCategory(item.slug)}
 
-                </span>
+                  </span>
 
-                <h3 className="mt-5 text-2xl font-bold text-[#1A1410]">
+                  <h3 className="mt-5 text-2xl font-bold text-[#1A1410]">
 
-                  {item.title}
+                    {item.hero.title}
 
-                </h3>
+                  </h3>
 
-                <p className="mt-4 leading-7 text-[#6E6259]">
+                  <p className="mt-4 leading-7 text-[#6E6259]">
 
-                  {item.shortDescription}
+                    {item.overview.shortDescription}
 
-                </p>
+                  </p>
 
-                <div className="mt-6 flex items-center justify-between">
+                  <div className="mt-6 flex items-center justify-between">
 
-                  <div>
+                    <div>
 
-                    <span className="text-sm text-[#6E6259]">
+                      <span className="text-sm text-[#6E6259]">
 
-                      Starting From
+                        Starting From
 
-                    </span>
+                      </span>
 
-                    <h4 className="text-2xl font-bold text-[#D4AF37]">
+                      <h4 className="text-2xl font-bold text-[#D4AF37]">
 
-                      ৳{item.startingPrice.toLocaleString()}
+                        ৳{lowestPrice.toLocaleString()}
 
-                    </h4>
+                      </h4>
+
+                    </div>
+                                        <Link
+                      to={`/services/${item.slug}/60`}
+                      className="rounded-xl bg-[#D4AF37] px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-[#bf9c2c]"
+                    >
+                      View Details
+                    </Link>
 
                   </div>
-                                    <Link
-                    to={`/services/${item.slug}/60`}
-                    className="rounded-xl bg-[#D4AF37] px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-[#bf9c2c]"
-                  >
-                    View Details
-                  </Link>
 
                 </div>
 
               </div>
-
-            </div>
-
-          ))}
+            );
+          })}
 
         </div>
 

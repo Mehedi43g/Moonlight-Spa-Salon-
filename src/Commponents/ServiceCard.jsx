@@ -33,7 +33,7 @@ const services = [
     description:
       "Warm herbal oils combined with expert massage techniques to melt away stress, relax muscles and restore natural body balance.",
 
-    startingPrice: "৳2,500",
+    startingPrice: "৳6,500",
 
     durations: [
       {
@@ -54,27 +54,27 @@ const services = [
   {
     id: 2,
     image: card2,
-    title: "Aromatherapy",
+    title: "Aroma Oil Massage",
     icon: FaLeaf,
     badge: "Luxury Care",
 
     description:
       "Essential oils carefully selected to calm your mind, reduce anxiety and create a complete wellness experience.",
 
-    startingPrice: "৳2,800",
+    startingPrice: "৳6,500",
 
     durations: [
       {
         title: "60 Min",
-        link: "/services/aromatherapy/60",
+        link: "/services/aroma-oil-massage/60",
       },
       {
         title: "90 Min",
-        link: "/services/aromatherapy/90",
+        link: "/services/aroma-oil-massage/90",
       },
       {
         title: "120 Min",
-        link: "/services/aromatherapy/120",
+        link: "/services/aroma-oil-massage/120",
       },
     ],
   },
@@ -89,7 +89,7 @@ const services = [
     description:
       "Perfect for relieving chronic pain, improving flexibility and releasing deep muscle tension.",
 
-    startingPrice: "৳3,000",
+    startingPrice: "৳5,500",
 
     durations: [
       {
@@ -110,27 +110,27 @@ const services = [
   {
     id: 4,
     image: card4,
-    title: "Facial Rejuvenation",
+    title: "Full Body Massage",
     icon: GiLotusFlower,
     badge: "Premium",
 
     description:
-      "Professional facial therapy that deeply hydrates your skin while giving you a naturally radiant glow.",
+      "A complete body massage designed to relieve muscle fatigue, reduce core stress levels, and restore physical energy.",
 
-    startingPrice: "৳2,700",
+    startingPrice: "৳5,500",
 
     durations: [
       {
         title: "60 Min",
-        link: "/services/facial-therapy/60",
+        link: "/services/full-body-massage/60",
       },
       {
         title: "90 Min",
-        link: "/services/facial-therapy/90",
+        link: "/services/full-body-massage/90",
       },
       {
         title: "120 Min",
-        link: "/services/facial-therapy/120",
+        link: "/services/full-body-massage/120",
       },
     ],
   },

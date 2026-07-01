@@ -19,7 +19,7 @@ const packages = [
     badge: "Most Popular",
 
     description:
-      "Enjoy a luxurious spa experience including a relaxing massage, herbal steam and calming aromatherapy session.",
+      "Enjoy a luxurious spa experience including a relaxing massage, herbal steam and calming aroma oil massage session.",
 
     price: "৳2,999",
 
@@ -35,7 +35,7 @@ const packages = [
     badge: "Luxury",
 
     description:
-      "A romantic spa session for couples featuring full body massage, aromatherapy and premium refreshments.",
+      "A romantic spa session for couples featuring full body massage, aroma oil massage and premium refreshments.",
 
     price: "৳5,999",
 
@@ -51,7 +51,7 @@ const packages = [
     badge: "Premium",
 
     description:
-      "Complete wellness treatment with hot oil massage, facial therapy and body polishing for total relaxation.",
+      "Complete wellness treatment with hot oil massage, full body massage and foot massage for total relaxation.",
 
     price: "৳4,499",
 
@@ -67,7 +67,7 @@ const packages = [
     badge: "Best Value",
 
     description:
-      "The complete luxury spa journey including massage, facial, steam bath and premium skincare treatment.",
+      "The complete luxury spa journey including deep tissue massage, full body massage, steam bath and foot massage.",
 
     price: "৳6,999",
 

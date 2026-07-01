@@ -4,14 +4,17 @@ import { MdSpa } from "react-icons/md";
 import { GiLotus } from "react-icons/gi";
 
 import { useBooking } from "../../context/BookingContext";
+import serviceDetails from "../../data/serviceDetails";
 
 const ServiceHero = () => {
   const { openBookingModal } = useBooking();
+  const heroImage = serviceDetails[0]?.hero?.image || "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=2000&q=80";
+
   return (
     <section className="relative w-full h-[90vh] min-h-162.5 overflow-hidden">
 
       <img
-        src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=2000&q=80"
+        src={heroImage}
         alt="Luxury Spa Services"
         className="absolute inset-0 w-full h-full object-cover"
       />
@@ -101,11 +104,11 @@ const ServiceHero = () => {
             <div className="rounded-2xl border border-white/10 bg-white/10 backdrop-blur-lg p-6">
 
               <h2 className="text-4xl font-bold text-[#D4AF37]">
-                10+
+                {serviceDetails.length}+
               </h2>
 
               <p className="mt-2 text-gray-300">
-                Years of Experience
+                Premium Treatments
               </p>
 
             </div>

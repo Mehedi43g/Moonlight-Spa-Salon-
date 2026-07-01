@@ -133,8 +133,8 @@ const Footer = () => {
                 </li>
 
                 <li>
-                  <Link to="/services/aromatherapy" className="transition hover:text-[#D4AF37]" >
-                    Aromatherapy Massage
+                  <Link to="/services/aroma-oil-massage" className="transition hover:text-[#D4AF37]" >
+                    Aroma Oil Massage
                   </Link>
                 </li>
 
@@ -151,14 +151,14 @@ const Footer = () => {
                 </li>
 
                 <li>
-                  <Link to="/services/facial-treatment" className="transition hover:text-[#D4AF37]" >
-                    Facial Treatment
+                  <Link to="/services/full-body-massage" className="transition hover:text-[#D4AF37]" >
+                    Full Body Massage
                   </Link>
                 </li>
 
                 <li>
-                  <Link to="/services/body-scrub" className="transition hover:text-[#D4AF37]" >
-                    Body Scrub
+                  <Link to="/services/nuru-massage" className="transition hover:text-[#D4AF37]" >
+                    Nuru Massage
                   </Link>
                 </li>
 

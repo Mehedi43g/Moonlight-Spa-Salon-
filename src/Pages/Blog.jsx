@@ -1,9 +1,20 @@
-import React from 'react'
+import BlogHero from "../Commponents/blog/BlogHero";
+import BlogGrid from "../Commponents/blog/BlogGrid";
+import BookingCTA from "../Commponents/packages/BookingCTA";
 
 const Blog = () => {
   return (
-    <div>Blog</div>
-  )
-}
+    <main>
+      {/* 1. Blog Header */}
+      <BlogHero />
 
-export default Blog
+      {/* 2. Blog search & cards listing */}
+      <BlogGrid />
+
+      {/* 3. Booking CTA Banner */}
+      <BookingCTA />
+    </main>
+  );
+};
+
+export default Blog;

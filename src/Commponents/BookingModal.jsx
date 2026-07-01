@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { X, MessageCircle, Globe } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useBooking } from "../context/BookingContext";
 
 const WHATSAPP_LINK = "https://wa.me/8801540097587";
@@ -67,17 +68,14 @@ export default function BookingModal() {
           WhatsApp Booking
         </a>
 
-        <button
-          disabled
-          className="flex w-full cursor-not-allowed items-center justify-center gap-3 rounded-xl bg-gray-700 py-4 text-lg font-semibold text-gray-300 opacity-70"
+        <Link
+          to="/booking"
+          onClick={closeBookingModal}
+          className="flex w-full items-center justify-center gap-3 rounded-xl bg-[#D4AF37] py-4 text-lg font-semibold text-black transition hover:bg-white"
         >
           <Globe size={22} />
           Website Booking
-        </button>
-
-        <p className="mt-3 text-center text-sm text-orange-400">
-          Coming Soon
-        </p>
+        </Link>
       </div>
     </div>
   );
